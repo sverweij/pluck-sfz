@@ -3,6 +3,8 @@ A lively harpsichordy sampler instrument, light on memory.
 
 Download sfz & samples in one go - [here](https://github.com/sverweij/pluck-sfz/archive/v1.0.0.zip)
 
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/647598855&color=%235e5e5e&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+
 ## Background
 This is my 'hello world' for creating a sampler instrument with sfz.
 
