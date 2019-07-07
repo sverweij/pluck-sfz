@@ -1,5 +1,7 @@
 ### Pluck sampler instrument
-A harpsichordy sampler instrument, light on memory, with a release sample.
+A lively harpsichordy sampler instrument, light on memory.
+
+Download sfz & samples in one go - [here](https://github.com/sverweij/pluck-sfz/archive/v1.0.0.zip)
 
 ## Background
 This is my 'hello world' for creating a sampler instrument with sfz.
@@ -14,3 +16,4 @@ Exported as ogg vorbis from Audicity. Wihtin Audacity generated with the _Pluck_
 ## Handy links
 - [sfzformat.com](https://sfzformat.com)
 - [MIDI Note to Pitch Table](https://usermanuals.finalemusic.com/Finale2012Mac/Content/Finale/MIDI_Note_to_Pitch_Table.htm)
+- [MIDI cc numbers](https://nickfever.com/music/midi-cc-list)
