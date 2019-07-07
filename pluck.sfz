@@ -1,0 +1,55 @@
+//------------------------------------------------------------------------------
+// A basic sfz template
+//------------------------------------------------------------------------------
+<control>
+default_path=samples/ // relative path of your samples
+
+<global>
+// parameters that affect the whole instrument go here.
+// As we currently have one group only it doesn't really matter whether
+// opcode's are in global or in group...
+
+
+<group>
+trigger=attack
+// it's a plucked instrument (hence ze name) => on release it should still sound
+// for a bit
+ampeg_release=2
+bend_up=100       // cents => 100cents = half a note
+loop_mode=no_loop // or no_loop loop_continuous or one_shot or loop_sustain
+
+// makes the sound slightly more lively
+pitch_random=10  // cents
+
+// The advised value for cross fades where the cross-fade samples are similar,
+// according to https://sfzformat.com/opcodes/xf_velcurve
+xf_keycurve=gain // values: gain or power
+
+// each region has a fade-in from one lower keycenter to its own keycenter and a fade-out its own keycenter 
+// to the next one. This prevents 'hard cuts' between samples (clearly audible with the samples at hand)
+//
+// fade-in   /|\ fade-out
+//        /   |  \
+//     /      |    \
+//  /         |      \
+// C4        C5      C6
+//
+// The lowest and highest keycenters only have a fade-out and fade-in respectively
+
+// There's a slight panning effect, where lower keys sound to the left, and higher ones to the right
+
+<region> lokey=21 hikey=37  pitch_keycenter=24  pan=-40                             xfout_lokey=21 xfout_hikey=37  sample=long-c1.ogg
+<region> lokey=24 hikey=49  pitch_keycenter=37  pan=-30 xfin_lokey=24 xfin_hikey=37 xfout_lokey=37 xfout_hikey=49  sample=long-c2.ogg
+<region> lokey=37 hikey=61  pitch_keycenter=49  pan=-20 xfin_lokey=37 xfin_hikey=49 xfout_lokey=49 xfout_hikey=61  sample=long-c3.ogg
+<region> lokey=49 hikey=73  pitch_keycenter=61  pan=-10 xfin_lokey=49 xfin_hikey=61 xfout_lokey=61 xfout_hikey=73  sample=long-c4.ogg
+<region> lokey=61 hikey=84  pitch_keycenter=73  pan=10  xfin_lokey=61 xfin_hikey=73 xfout_lokey=73 xfout_hikey=84  sample=long-c5.ogg
+<region> lokey=74 hikey=96  pitch_keycenter=84  pan=20  xfin_lokey=74 xfin_hikey=84 xfout_lokey=84 xfout_hikey=96  sample=long-c6.ogg
+<region> lokey=84 hikey=108 pitch_keycenter=96  pan=30  xfin_lokey=84 xfin_hikey=96 xfout_lokey=96 xfout_hikey=108 sample=long-c7.ogg
+<region> lokey=96 hikey=108 pitch_keycenter=108 pan=40  xfin_lokey=96 xfin_hikey=108                               sample=long-c8.ogg
+
+<group>
+trigger=release
+loop_mode=no_loop
+volume=-36 // dB
+
+<region> lokey=21 hikey=108 pitch_keycenter=61 pan=0 tune=-10 sample=release-c4.ogg
