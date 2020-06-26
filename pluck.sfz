@@ -1,5 +1,7 @@
 <control>
-default_path=samples/ // relative path of your samples
+default_path=samples/ // relative path to the samples
+label_cc1=modulation
+
 
 <global>
 // parameters that affect the whole instrument go here.
